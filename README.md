@@ -17,9 +17,55 @@ Sinh viên thực hiện: Lưu Quang Tiến - 23110157
 
 ## *Nhóm thuật toán 1*
 Ở nhóm thuật toán này, bàn cờ ở bên phải là trạng thái mục tiêu được người dùng đặt sẵn.
+![Board](asset/Board_1.png)
 
 ### BFS
 Thuật toán sẽ quét cạn qua không gian trạng thái cho đến khi tìm được trạng thái mục tiêu. Thứ tự những trạng thái được thực hiện là FILO (First In Last Out) trong hàng đợi.
+![BFS](asset/BFS.png)
 
 ### DFS
 Thuật toán tìm kiếm theo chiều sâu bắt đầu từ trạng thái ban đầu đến trạng thái mục tiêu, Thứ tự những trạng thái được thực hiện là FIFO (First In First Out) trong hàng đợi. DFS có thể tìm kiếm đường đi nhanh hơn BFS với không gian trạng thái nhỏ hơn, nhưng nhược điểm của DFS là nó có thể bị kẹt trong vòng lặp vô tận, không thể đến trạng thái mục tiêu.
+![DFS](asset/DFS.png)
+
+### DLS
+Thuật toán tìm kiếm theo chiều sâu tương tự như DFS, nhưng khác với DFS nó được đặt limit độ sâu, ngăn thuật toán đi tìm kiếm quá sâu. Đối với bài 8 con hậu, khi limit = 8 thì DLS hoạt động giống với DFS.
+![DLS](asset/DLS.png)
+
+### IDS
+Thuật toán tìm kiếm theo chiều sâu, là cải tiến của DLS. Sau khi duyệt qua tất cả trạng thái nằm ở trong limit đặt trước, các trạng thái mới được mở rộng ra như BFS và limit được tăng lên 1. Thuật toán sẽ tìm kiếm lại với limit mới. Điều này giúp khắc phục hạn chế nguy cơ bị mắc vào vòng lặp vô hạn của DFS. Đối với bài 8 con hậu, khi limit = 8 thì IDS hoạt động giống với DFS.
+![IDS](asset/IDS.png)
+
+## *Nhóm thuật toán 2*
+Ở nhóm thuật toán này, bàn cờ ở bên phải là trạng thái mục tiêu được người dùng đặt sẵn như ở nhóm 1.
+
+### UCS
+Thuật toán UCS khác biệt với những thuật toán trước ở việc kèm theo cost g(n) cho các trạng thái và từ đó tìm đường đi với chi phí ít nhất. Ở thuật toán này, cost được tính bởi số ô mới bị tấn công bởi con hậu mới đặt.
+![UCS](asset/UCS.png)
+
+### Greedy
+Thuật toán Greedy (hay Best first search) sử dụng giá trị heuristic h(n) để tìm vị trí đặt con hậu tốt nhất tại thời điểm hiện tại, heuristic càng thấp thì độ ưu tiên càng cao. Heuristic được tính bằng khoảng cách giữa con cờ tiếp theo so với con cờ cùng dòng tại bàn cờ bên phải.
+![Greedy](asset/Greedy.png)
+
+### A*
+Thuật toán A* kết hợp việc sử dụng g(n) và h(n) với công thức f(n) = g(n) + h(n). Trong đó g(n) là giá trị cost từ vị trí ban đầu cho đến hiện tại và h(n) là giá trị heuristic hiện tại.
+![Asao](asset/Asao.png)
+
+## *Nhóm thuật toán 3*
+
+### Hill Climbing
+Thuật toán leo đồi sẽ luôn lựa chọn những trạng thái có giá trị heuristic tốt nhất, không lựa chon những đường đi có giá trị thấp hơn hay bằng với vị trí hiện tại. Điều này làm Hill climbing tìm kiếm cực nhanh nhưng có hạn chế vô cùng nghiêm trọng. Hill climbing có thể bị mắc kẹt trong một vùng local, khi điều đó xảy ra thuật toán sẽ ngưng và không tìm thấy được trạng thái mục tiêu.
+![Hill](asset/Hill.png)
+
+### Simulated annealing
+Thuật toán cải tiến cho Hill Climbing bằng cách cho chấp nhận những bước đi "tệ hơn" trạng thái hiện tại qua nhiệt độ T và độ làm lạnh alpha.
+![SA](asset/SA.png)
+
+### Beam search
+Beam search cốt lõi cũng hoạt động tương tự như thuật toán Greedy, nhưng khác với Greedy chỉ lấy 1 lựa chọn tốt nhất, Beam search sẽ lấy số bước đi tốt nhất tại thời điểm đó tương ứng với độ rộng của beam đã được khai báo trước. K = 3
+![Beam](asset/Beam.png)
+
+### Genetic algorithm
+Thuật toán Genetic sẽ lấy 2 trạng thái bố mẹ sinh ra 2 trạng thái con có thuộc tính của 2 trạng thái bố mẹ, khi sinh ra có mức độ biến dị làm cho quần thể trạng thái phong phú hơn, tránh sự đồng hóa quần thể. mutation_prob = 0.2, giới hạn quần thể = 1000.
+![Genetic](asset/Genetic.png)
+
+
