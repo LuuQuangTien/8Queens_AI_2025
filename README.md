@@ -68,4 +68,34 @@ Beam search cốt lõi cũng hoạt động tương tự như thuật toán Gree
 Thuật toán Genetic sẽ lấy 2 trạng thái bố mẹ sinh ra 2 trạng thái con có thuộc tính của 2 trạng thái bố mẹ, khi sinh ra có mức độ biến dị làm cho quần thể trạng thái phong phú hơn, tránh sự đồng hóa quần thể. mutation_prob = 0.2, giới hạn quần thể = 1000.
 ![Genetic](asset/Genetic.png)
 
+## *Nhóm thuật toán 4*
+
+### Không xác định
+Tìm thấy tất cả 92 trạng thái mục tiêu cho bài toán 8 con hậu từ trạng thái ban đầu [].
+![AndOr](asset/AndOr.png)
+
+### Môi trường không nhìn thấy
+Thuật toán sử dụng trạng thái niềm tin để tìm kiến. Trong thuật toán, không thể biết được bước đi tiếp theo ở đâu, trạng thái cuối cùng là gì. Kết quả thuật toán đưa ra là tập tất cả các trạng thái mục tiêu cho bài toán 8 con hậu.
+![Sensorless](asset/Sensorless.png)
+
+### Môi trường nhìn thấy một phần
+Thuật toán cải tiến cho thuật toán tìm kiếm trong môi trường không nhìn thấy gì hết. Trong thuật toán này sẽ cho biết vị trí con hậu đầu tiên (0, 2) và từ đó sẽ đi tìm tập các trạng thái mục tiêu cho bài toán 8 con hậu có con hậu đầu tiên là (0, 2).
+![PO](asset/PO.png)
+
+## *Nhóm thuật toán 5*
+
+### Backtracking
+Thuật toán sử dụng đề quy để đi qua những trạng thái và kiểm tra rằng buộc, nếu như thỏa mãn rằng buộc thì sẽ tiếp tục xét trạng thái con tiếp theo, nếu không thì xét trạng thái khác. Đề quy đến khi tìm được đáp án cho bài toán 8 con hậu.
+![Backtrack](asset/Backtrack.png)
+
+### Forward checking
+Thuật toán Forward checking sẽ kiểm tra những vi phạm rằng buộc trong bài toán trước khi sinh ra trạng thái con và loại chúng ra khỏi domain cần kiểm tra. Sau khi loại xong, có thể sử dụng các thuật toán khác như Backtracking để tiếp tục giải.
+![FC](asset/FC.png)
+
+### AC3
+Thuật toán AC3 sẽ từ những rằng buộc sẽ tạo ra những "Arc" để kiểm tra những domain. Những Arc này bao gồm những rằng buộc ban đầu và kèm theo đảo ngược của những rằng buộc đó. Nếu khi kiểm tra domain, domain bị thay đổi thì ta sẽ đưa những Arc có domain bị thay đổi nằm ở bên phải vào hàng đợi Arc kiểm tra domain. Nếu trong hàng đợi đã có Arc đó rồi thì khỏi cần đưa vào. Tiếp tục cho đến khi hàng đợi rỗng. Sau khi loại xong, có thể sử dụng các thuật toán khác như Backtracking để tiếp tục giải.
+![AC3](asset/AC3.png)
+
+
+
 
