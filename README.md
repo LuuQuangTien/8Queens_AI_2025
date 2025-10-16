@@ -97,5 +97,6 @@ Thuật toán AC3 sẽ từ những rằng buộc sẽ tạo ra những "Arc" đ
 ![AC3](asset/AC3.png)
 
 
-
-
+## **Kết luận**
+- Đối với những trường hợp đã biết được trạng thái mục tiêu như thế nào từ ban đầu thì những thuật toán ở nhóm 2, đặc biệt là A* là tối ưu nhất khi xét về không gian trạng thái.
+- Đối với những trường hợp không biết được trạng thái mục tiêu như thế nào thì những thuật toán ở nhóm 5, đặc biệt là AC3 là tối ưu nhất khi xét về không gian trạng thái.
